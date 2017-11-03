@@ -13,19 +13,21 @@ class TodoList extends Component {
     }
 
     addItem(event){
-        debugger;
-        var itemsArray = this.state.items;
+        //debugger;
+        let itemsArray = this.state.items;
 
         itemsArray.push(
             {
                 text: this._inputElement.value,
-                key: Date.now
+                key: Date.now()
             }
         );
 
         this.setState({
             items: itemsArray
         })
+
+        this._inputElement.value = "";
 
         event.preventDefault();
     }

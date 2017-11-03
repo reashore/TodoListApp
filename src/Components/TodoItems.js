@@ -3,24 +3,20 @@ import '../App.css';
 
 class TodoItems extends Component {
   render(){
-      var todoEntries = this.props.entries;
-
       function createTasks(item){
-          var key = item.key;
-          var text = item.text;
+          let key = item.key;
+          let text = item.text;
+
+          //console.log(`key = ${key}`);
 
           return (
-            <li key={key}>{text} : {key}</li>
+            <li key={key}>{text}</li>
         );
       }
 
-      var listItems = todoEntries.map(createTasks);
-
       return (
         <ul className="theList">
-            {/* // bug duplicate keys on list items */}
-            {listItems}
-            {/* {this.props.entries.map(createTasks)} */}
+            {this.props.entries.map(createTasks)}
         </ul>
       );
   }
