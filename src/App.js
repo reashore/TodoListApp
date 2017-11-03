@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Todo List App</h1>
+        <TodoList/>
       </div>
     );
   }
