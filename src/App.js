@@ -3,9 +3,9 @@ import TodoList from './Components/TodoList'
 import './App.css';
 
 class App extends Component {
-  render() {
+  render(){
     return (
-      <div className="App">
+      <div>
         <h1>Todo List App</h1>
           <TodoList/>
       </div>

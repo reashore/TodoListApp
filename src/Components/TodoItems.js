@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class TodoItems extends Component {
-  render() {
+  render(){
       var todoEntries = this.props.entries;
 
       function createTasks(item){
+          var key = item.key;
+          var text = item.text;
+
           return (
-            <li key={item.key}>
-                {item.text}
-            </li>
+            <li key={key}>{text} : {key}</li>
         );
       }
 
@@ -17,9 +18,11 @@ class TodoItems extends Component {
 
       return (
         <ul className="theList">
+            {/* // bug duplicate keys on list items */}
             {listItems}
+            {/* {this.props.entries.map(createTasks)} */}
         </ul>
-      )
+      );
   }
 }
 

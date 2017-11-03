@@ -8,6 +8,8 @@ class TodoList extends Component {
         this.state = {
             items: []
         };
+
+        this.addItem = this.addItem.bind(this);
     }
 
     addItem(event){
@@ -28,7 +30,7 @@ class TodoList extends Component {
         event.preventDefault();
     }
 
-    render() {
+    render(){
       return (
         <div className="todoListMain">
             <div className="header">
@@ -37,6 +39,7 @@ class TodoList extends Component {
                     <button type="submit">Add</button>
                 </form>
             </div>
+
             <TodoItems entries={this.state.items}/>
         </div>
       );
