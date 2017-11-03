@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import TodoItems from './TodoItems';
 import '../App.css';
 
 class TodoList extends Component {
-    getInitialState() {
-        return {
+    constructor(props){
+        super(props);
+        this.state = {
             items: []
         };
     }
 
-    addItem(e){
+    addItem(event){
+        debugger;
         var itemsArray = this.state.items;
 
         itemsArray.push(
@@ -22,7 +25,7 @@ class TodoList extends Component {
             items: itemsArray
         })
 
-        e.preventDefault();
+        event.preventDefault();
     }
 
     render() {
@@ -34,6 +37,7 @@ class TodoList extends Component {
                     <button type="submit">Add</button>
                 </form>
             </div>
+            <TodoItems entries={this.state.items}/>
         </div>
       );
     }

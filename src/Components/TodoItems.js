@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 class TodoItems extends Component {
   render() {
       var todoEntries = this.props.entries;
 
       function createTasks(item){
-          return <li key={item.key}></li>
+          return (
+            <li key={item.key}>
+                {item.text}
+            </li>
+        );
       }
 
       var listItems = todoEntries.map(createTasks);
